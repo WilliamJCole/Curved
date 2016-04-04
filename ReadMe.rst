@@ -1,8 +1,18 @@
-############################
-IS 210 Final Project: Curved
-############################
-********************
-Curved: Grading Help
-****************************
-(For Students and Teachers)
-============================
+##############
+README: Curved
+##############
+
+1. Installation
+================
+
+Curved requires the following modules to be installed:
+
+-
+-
+-
+
+2. Executing Curved.py
+=======================
+
+
+
