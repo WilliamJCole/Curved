@@ -33,7 +33,8 @@ and more automatic course to get my grades.
 
 4. User Stories
 ==================
-#place text here
+A student, John Doe, isn't sure of their GPA. This program will help them see where they need to work harder in. It also allows a teacher
+to do the same. 
 
 5. Acceptance Stories
 =====================
