@@ -193,7 +193,7 @@ def input_number(message, min_i=None, max_i=None, accept_floats=False):
 
         # Print error message if the user entered an invalid input
         if not valid_input:
-            print ("Invalid input. Try again.")
+            print("Invalid input. Try again.")
 
     # Return the valid number entered by the user
     return input_num
@@ -277,7 +277,7 @@ def input_yn(message):
 
         # Print error message if the user entered an invalid input
         if not valid_input:
-            print ("Invalid input. Try again.")
+            print("Invalid input. Try again.")
 
     # Return True if the user entered y/Y, False if the user entered n/N
     return answer == 'y'
@@ -780,7 +780,7 @@ def main():
             add_student(students)
 
             # Print success message
-            print ("\nNew student added!")
+            print("\nNew student added!")
 
     # Overwrite the input file to add any new students created
     write_students_file(in_filename, students)
@@ -797,8 +797,8 @@ def main():
     write_final_grades(out_filename, students, curve)
 
     # Print success message
-    print ("\nFinal grades successfully written to '" +
-           str(out_filename) + "'.")
+    print("\nFinal grades successfully written to '" +
+          str(out_filename) + "'.")
 
 
 if __name__ == '__main__':
