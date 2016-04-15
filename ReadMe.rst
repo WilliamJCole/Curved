@@ -25,5 +25,6 @@ Assignments = 20%
 Quizes      = 30%
 Exams       = 50%
 
-.. note::
+::
+    **Note:**
     It's simple to change the default weights as they are on the top of the Curved.py Program.
