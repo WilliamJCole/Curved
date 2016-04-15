@@ -12,6 +12,7 @@ WEIGHT_ASSIGNMENTS = 0.2  # Weight of assignments in the final grade for student
 WEIGHT_QUIZZES = 0.3      # Weight of quizzes in the final grade of a student
 WEIGHT_EXAMS = 0.5        # Weight of exams in the final grade of a student
 
+
 # Helper/utility functions
 
 
@@ -78,39 +79,26 @@ def letter_grade(grade):
         >>> letter_grade(-5)
         'F'
     """
-    # Set letter grade depending on the grade
-    if grade >= 95:
-        letter = 'A+'
-    elif grade >= 93:
-        letter = 'A'
-    elif grade >= 90:
-        letter = 'A-'
-    elif grade >= 87:
-        letter = 'B+'
-    elif grade >= 83:
-        letter = 'B'
-    elif grade >= 80:
-        letter = 'B-'
-    elif grade >= 77:
-        letter = 'C+'
-    elif grade >= 73:
-        letter = 'C'
-    elif grade >= 70:
-        letter = 'C-'
-    elif grade >= 67:
-        letter = 'D+'
-    elif grade >= 63:
-        letter = 'D'
-    elif grade >= 60:
-        letter = 'D-'
-    else:
-        letter = 'F'
+    # List of minimum grades per letter grade
+    grades = [95, 93, 90, 87, 83, 80, 77, 73, 70, 67, 63, 60]
 
-    # Return letter grade
-    return letter
+    # List of corresponding letter grades
+    letters = ['A+', 'A', 'A-', 'B+', 'B', 'B-',
+               'C+', 'C', 'C-', 'D+', 'D', 'D-']
+
+    # Iterate over the possible grades and check if grade is
+    # at least any of those
+    for i, min_grade in enumerate(grades):
+        # Once the grade is greater than the one in the list, return its
+        # corresponding letter grade
+        if grade >= min_grade:
+            return letters[i]
+
+    # Return F if the grade wasn't at least any of the minimum grades
+    return 'F'
 
 
-def input_number(message, min_i=None, max_i=None, accept_floats=False):
+def input_number(message, min_i=None, max_i=None, num_type=int):
     """
     Repeatedly asks the user to enter a number within the given range until
     the user enters a valid input. Returns the valid input entered by the user.
@@ -119,8 +107,7 @@ def input_number(message, min_i=None, max_i=None, accept_floats=False):
         message (str) : The message to ask the user
         min_i (float) : The minimum number the user can enter (default: None)
         max_i (float) : The maximum number the user can enter (default: None)
-        accept_floats (bool) : The indicator if the user can enter floats
-            (default: False)
+        num_type (type) : The type of input to be entered (default: int)
     Returns:
         float : The valid number entered by the user
     Example:
@@ -161,7 +148,7 @@ def input_number(message, min_i=None, max_i=None, accept_floats=False):
         Invalid input. Try again.
         Enter an integer less than or equal to 0: 0
         0
-        >>> input_number('Enter any number: ', accept_floats=True)
+        >>> input_number('Enter any number: ', num_type=float)
         Enter any number: banana
         Invalid input. Try again.
         Enter any number: 59.5
@@ -173,10 +160,7 @@ def input_number(message, min_i=None, max_i=None, accept_floats=False):
     while not valid_input:
         try:
             # Ask user to enter the number
-            if accept_floats:
-                input_num = float(input(message))
-            else:
-                input_num = int(input(message))
+            input_num = num_type(input(message))
 
             # Validate if the input is within the range
             min_check = True
@@ -199,10 +183,10 @@ def input_number(message, min_i=None, max_i=None, accept_floats=False):
     return input_num
 
 
-def input_numbers(message, length, min_i=None, max_i=None, accept_floats=False):
+def input_numbers(message, length, min_i=None, max_i=None, num_type=int):
     """
     Asks the user to enter multiple numbers. Returns a list containing the
-    valid numbers entered by the user. See function input_number for mroe
+    valid numbers entered by the user. See function input_number for more
     details about the validation of user input.
 
     Args:
@@ -210,12 +194,11 @@ def input_numbers(message, length, min_i=None, max_i=None, accept_floats=False):
         length (int) : The number of numbers to be entered by the user
         min_i (float) : The minimum number the user can enter (default: None)
         max_i (float) : The maximum number the user can enter (default: None)
-        accept_floats (bool) : The indicator if the user can enter floats
-            (default: False)
+        num_type (type) : The type of input to be entered (default: int)
     Returns:
         list(float/int) : The list of valid numbers entered by the user
     Example:
-        >>> input_numbers('Number', 5, accept_floats=True)
+        >>> input_numbers('Number', 5, num_type=float)
         Number 1: 0
         Number 2: 100
         Number 3: banana
@@ -230,7 +213,7 @@ def input_numbers(message, length, min_i=None, max_i=None, accept_floats=False):
     for i in range(1, length+1):
         # Ask the user for the number and append the valid input to the list
         input_num = input_number(message + " " + str(i) + ": ",
-                                 min_i, max_i, accept_floats)
+                                 min_i, max_i, num_type=num_type)
         input_num_list.append(input_num)
 
     # Return the list of numbers entered by the user
@@ -285,12 +268,13 @@ def input_yn(message):
 
 # Classes and functions
 
+
 class Student:
     """
     The Student class represents a Student.
     """
 
-    def __init__(self, name, assignments=[], quizzes=[], exams=[]):
+    def __init__(self, name, assignments=None, quizzes=None, exams=None):
         """
         Creates a new Student object with the given name, and lists of their
         grades on assignments, quizzes, and exams.
@@ -298,67 +282,120 @@ class Student:
         Args:
             name (str) : The name of the student
             assignments (list(float)) : The grades of the student on assignments
-                (default: empty list)
+                (default: None)
             quizzes (list(float)) : The grades of the student on quizzes
-                (default: empty list)
+                (default: None)
             exams (list(float)) : The grades of the student on exams (default:
-                empty list)
+                None)
         Example:
             >>> s1 = Student("Ricky Loo",[85,92,88,92,95,94,91,90,93,92],
                     [86,89,89,85,84,91,93],[89,86,85])
             >>> s2 = Student("Emily James",[80,90,84,82,84,89,87,86,87,85],
                     [82,89,86,80,85,80,82],[92,91,92])
         """
-        # Set the name of the student and the lists of his/her grades
+        # Set the name of the student
         self.name = name
-        self.assignments = assignments
-        self.quizzes = quizzes
-        self.exams = exams
 
-    def compute_final_grade(self, curve=False):
+        # Set the student's assignment grades
+        if assignments is None:
+            self.assignments = []
+        else:
+            self.assignments = assignments
+
+        # Set the student's quiz grades
+        if quizzes is None:
+            self.quizzes = []
+        else:
+            self.quizzes = quizzes
+
+        # Set the student's exam grades
+        if exams is None:
+            self.exams = []
+        else:
+            self.exams = exams
+
+    def assignments_average(self):
         """
-        Computes and returns the final grade of the student. Curved grade
-        will be computed as follows:
-            final grade = ((4/5) * pre-final grade) + 20
-        See the constant variables WEIGHT_ASSIGNMENTS, WEIGHT_QUIZZES,
-        WEIGHT_EXAMS for the weights of assignments, quizzes, and exams
-        respectively.
+        Computes and returns the average of the student's assignment grades.
 
-        Args:
-            curve (bool) : Indicator if the final grade of the student
-                will be curved (default: False)
         Returns:
-            tuple(float, str) : A 2-tuple consisting of the computed final grade
-                of the student, and its letter grade counter part (see function
-                letter_grade(grade) for the table of grading system)
+            float : The average of the student's assignment grades.
         Example:
             >>> s1 = Student("Ricky Loo",[85,92,88,92,95,94,91,90,93,92],
                     [86,89,89,85,84,91,93],[89,86,85])
             >>> s2 = Student("Emily James",[80,90,84,82,84,89,87,86,87,85],
                     [82,89,86,80,85,80,82],[92,91,92])
-            >>> s1.compute_final_grade()
-            (88.01619047619047,'B+')
-            >>> s2.compute_final_grade()
-            (87.94190476190477,'B+')
-            >>> s1.compute_final_grade(True)
-            (90.41295238095238,'A-')
-            >>> s2.compute_final_grade(True)
-            (90.35352380952381,'A-')
+            >>> s1.assignments_average()
+            91.2
+            >>> s2.assignments_average()
+            85.4
+        """
+        return compute_average(self.assignments)
+
+    def quizzes_average(self):
+        """
+        Computes and returns the average of the student's quiz grades.
+
+        Returns:
+            float : The average of the student's quiz grades.
+        Example:
+            >>> s1 = Student("Ricky Loo",[85,92,88,92,95,94,91,90,93,92],
+                    [86,89,89,85,84,91,93],[89,86,85])
+            >>> s2 = Student("Emily James",[80,90,84,82,84,89,87,86,87,85],
+                    [82,89,86,80,85,80,82],[92,91,92])
+            >>> s1.quizzes_average()
+            88.14285714285714
+            >>> s2.quizzes_average()
+            83.42857142857143
+        """
+        return compute_average(self.quizzes)
+
+    def exams_average(self):
+        """
+        Computes and returns the average of the student's exam grades.
+
+        Returns:
+            float : The average of the student's exam grades.
+        Example:
+            >>> s1 = Student("Ricky Loo",[85,92,88,92,95,94,91,90,93,92],
+                    [86,89,89,85,84,91,93],[89,86,85])
+            >>> s2 = Student("Emily James",[80,90,84,82,84,89,87,86,87,85],
+                    [82,89,86,80,85,80,82],[92,91,92])
+            >>> s1.exams_average()
+            86.66666666666667
+            >>> s2.exams_average()
+            91.66666666666667
+        """
+        return compute_average(self.exams)
+
+    def final_grade(self):
+        """
+        Computes and returns the final grade of the student. See the constant
+        variables WEIGHT_ASSIGNMENTS, WEIGHT_QUIZZES, WEIGHT_EXAMS for the
+        weights of assignments, quizzes, and exams respectively.
+
+        Returns:
+            float : The computed final grade of the student (without curving)
+        Example:
+            >>> s1 = Student("Ricky Loo",[85,92,88,92,95,94,91,90,93,92],
+                    [86,89,89,85,84,91,93],[89,86,85])
+            >>> s2 = Student("Emily James",[80,90,84,82,84,89,87,86,87,85],
+                    [82,89,86,80,85,80,82],[92,91,92])
+            >>> s1.final_grade()
+            88.01619047619047
+            >>> s2.final_grade()
+            87.94190476190477
         """
         # Compute weighted average of assignments, quizzes, and exams
-        avg_assignments = compute_average(self.assignments) * WEIGHT_ASSIGNMENTS
-        avg_quizzes = compute_average(self.quizzes) * WEIGHT_QUIZZES
-        avg_exams = compute_average(self.exams) * WEIGHT_EXAMS
+        avg_assignments = self.assignments_average() * WEIGHT_ASSIGNMENTS
+        avg_quizzes = self.quizzes_average() * WEIGHT_QUIZZES
+        avg_exams = self.exams_average() * WEIGHT_EXAMS
 
         # Compute final grade by adding the computed weighted averages
         final_grade = avg_assignments + avg_quizzes + avg_exams
 
-        # Curve grade if necessary
-        if curve:
-            final_grade = ((final_grade * 4.0) / 5.0) + 20
-
         # Return final grade and its letter grade counterpart
-        return final_grade, letter_grade(final_grade)
+        return final_grade
 
     def __str__(self):
         """
@@ -593,7 +630,7 @@ def add_student(students):
         "Number of assignment grades the student has: ", min_i=0)
     assignments = input_numbers("Assignment", num_assignments,
                                 min_i=MIN_GRADE, max_i=MAX_GRADE,
-                                accept_floats=True)
+                                num_type=float)
 
     # Ask user for the number of quiz grades the student has, then ask
     # the user for the student's quiz grades
@@ -601,15 +638,15 @@ def add_student(students):
         "Number of quiz grades the student has: ", min_i=0)
     quizzes = input_numbers("Quiz", num_quizzes,
                             min_i=MIN_GRADE, max_i=MAX_GRADE,
-                            accept_floats=True)
+                            num_type=float)
 
     # Ask user for the number of exam grades the student has, then ask
     # the user for the student's exam grades
     num_exams = input_number(
         "Number of exam grades the student has: ", min_i=0)
-    exams = input_numbers("Quiz", num_exams,
+    exams = input_numbers("Exam", num_exams,
                           min_i=MIN_GRADE, max_i=MAX_GRADE,
-                          accept_floats=True)
+                          num_type=float)
 
     # Create a new student object and add it to the list
     students.append(Student(name, assignments, quizzes, exams))
@@ -637,7 +674,9 @@ def write_final_grades(filename, students, curve=False):
         students (list(Student)) : The students  whose final grades will be
             computed and written on the file
         curve (bool) : Indicator if the final grade of the students
-            will be curved (default: False)
+            will be curved. If True, all students' final grades will be
+            curved depending on the highest final grade out of all
+            the students (default: False)
     Example:
         >>> s1 = Student("Ricky Loo",[85,92,88,92,95,94,91,90,93,92],
             [86,89,89,85,84,91,93],[89,86,85])
@@ -655,22 +694,40 @@ def write_final_grades(filename, students, curve=False):
         >>> write_final_grades('grades.txt', students, curve=True)
 
         grades.txt:
-        Ricky Loo,90.41,A-
-        Emily James,90.35,A-
-        Jojo Fernandez,20.00,F
+        Ricky Loo,100.00,A+
+        Emily James,99.93,A+
+        Jojo Fernandez,11.98,F
     """
     # Open the file for writing
     with open(filename, 'w') as file:
-        # Iterate over students in the list
+        # Iterate over the students in the list, then compute and store
+        # their final grades in a list
+        final_grades = []
         for student in students:
+            final_grades.append(student.final_grade())
+
+        # Check if students grades must be curved
+        if curve:
+            # Get the highest final grade
+            highest = max(final_grades)
+
+            # Compute the points to be added on all the final grades
+            to_add = MAX_GRADE - highest
+
+            # Add additional points to the final grades
+            for i in range(len(final_grades)):
+                final_grades[i] += to_add
+
+        # Iterate over students in the list
+        for i, student in enumerate(students):
             # Write the student's name to the file
             file.write(student.name)
 
-            # Compute the final grade of the student
-            final_grade, final_letter_grade = student.compute_final_grade(curve)
+            # Write the final grade of the student
+            file.write(",{:.2f}".format(final_grades[i]))
 
-            # Write the results to the file
-            file.write(",{:.2f},{}".format(final_grade, final_letter_grade))
+            # Write the final letter grade of the student
+            file.write("," + letter_grade(final_grades[i]))
 
             # Write a new line to the file
             file.write("\n")
@@ -801,5 +858,5 @@ def main():
           str(out_filename) + "'.")
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
