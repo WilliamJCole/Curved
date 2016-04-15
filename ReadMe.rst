@@ -26,4 +26,4 @@ Quizes      = 30%
 Exams       = 50%
 
 .. Note::
-    It's simple to change the default weights as they are on the top of the Curved.py Program.
+   It's simple to change the default weights as they are on the top of the Curved.py Program.
