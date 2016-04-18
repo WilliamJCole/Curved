@@ -51,7 +51,7 @@ I will create a blank text file with a name of my choosing ie "student.txt".
 
 Then I start the Curved program, and follow the written instructions.
 
-.. code-block::
+.. terminal::
   Enter filename of students' data: student.txt
   Would you like to add another student (y/n)? y
   Name:James Marcos
@@ -94,7 +94,7 @@ File Named: Student.txt
   James Marcos|90.0,85.0,95.0,93.0,94.0|90.0,92.0,95.0,93.0,94.0|90.0
 
 Open Curved, and followed prompt:
-.. code-block::
+.. terminal::
   Enter filename of students' data: student.txt
 
   Would you like to add another student (y/n)? n
@@ -106,7 +106,7 @@ Open Curved, and followed prompt:
   Final grades successfully written to 'Grade.txt'.
 
 File Names: Grade.txt:
-.. code-block::
+.. ::
   James Marcos,91.12,A-
 
 Scenario 03:
@@ -115,7 +115,7 @@ I created a file with all of my students grades and calculate their letter
 grade values.
 
 File Named: Students.txt
-.. code-block::
+.. ::
   John Doe|85.0,92.0,88.0,92.0,95.0,94.0,91.0,90.0,93.0,92.0|86.0,89.0,89.0,
   85.0,84.0,91.0,93.0|89.0,86.0,85.0,87.0
   Emily Rose|80.0,90.0,84.0,82.0,84.0,89.0,87.0,86.0,87.0,85.0|82.0,89.0,86.0,
@@ -138,7 +138,7 @@ File Named: Students.txt
   61.0,55.0,66.0,67.0|60.0,54.0,55.0,60.0
 
 Open Curved and followed the prompt:
-.. code-block::
+.. Terminal::
   Enter filename of students' data: students.txt
 
   Would you like to add another student (y/n)? n
@@ -150,7 +150,7 @@ Open Curved and followed the prompt:
   Final grades successfully written to 'grades.txt'.
 
 File Named: grades.txt
-.. code-block::
+.. ::
   John Doe,88.06,B+
   Emily Rose,86.48,B
   Erica Moss,80.13,B-
@@ -170,7 +170,7 @@ completed, and then curve the grades.
 File Name Students.txt
 
 Open Curved and followed the prompt:
-.. code-block::
+.. Terminal::
   Enter filename of students' data: students.txt
 
   Would you like to add another student (y/n)? n
@@ -182,7 +182,7 @@ Open Curved and followed the prompt:
   Final grades successfully written to 'grades.txt'.
 
 File Named Grades.txt:
-.. code-block::
+.. ::
   John Doe,93.34,A
   Emily Rose,91.76,A-
   Erica Moss,85.41,B
