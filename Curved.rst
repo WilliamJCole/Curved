@@ -169,7 +169,7 @@ completed, and then curve the grades.
 File Name Students.txt
 
 Open Curved and followed the prompt:
-.. Terminal::
+.. ::
   Enter filename of students' data: students.txt
 
   Would you like to add another student (y/n)? n
