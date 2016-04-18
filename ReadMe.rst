@@ -168,7 +168,6 @@ completed, and then curve the grades.
 File Name Students.txt
 
 Open Curved and followed the prompt:
-
 .. ::
   Enter filename of students' data: students.txt
 
@@ -181,7 +180,6 @@ Open Curved and followed the prompt:
   Final grades successfully written to 'grades.txt'.
 
 File Named Grades.txt:
-
 .. ::
   John Doe,93.34,A
   Emily Rose,91.76,A-
