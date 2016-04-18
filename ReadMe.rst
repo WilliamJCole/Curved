@@ -193,9 +193,9 @@ File Named Grades.txt:
   Andrew Thomas,69.90,D+
   Bob Davidler,62.91,D-
 
-#############
+**************
 INSTRUCTIONS
-#############
+**************
 
 1. Installation
 ================
