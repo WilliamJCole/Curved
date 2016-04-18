@@ -51,7 +51,7 @@ I will create a blank text file with a name of my choosing ie "student.txt".
 
 Then I start the Curved program, and follow the written instructions.
 
-.. terminal::
+.. Terminal::
   Enter filename of students' data: student.txt
   Would you like to add another student (y/n)? y
   Name:James Marcos
