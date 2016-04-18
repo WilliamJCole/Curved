@@ -858,5 +858,5 @@ def main():
           str(out_filename) + "'.")
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()
