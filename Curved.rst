@@ -93,7 +93,7 @@ File Named: Student.txt
   James Marcos|90.0,85.0,95.0,93.0,94.0|90.0,92.0,95.0,93.0,94.0|90.0
 
 Open Curved, and followed prompt:
-.. terminal::
+.. ::
   Enter filename of students' data: student.txt
 
   Would you like to add another student (y/n)? n
@@ -137,7 +137,7 @@ File Named: Students.txt
   60.0,54.0,55.0,60.0
 
 Open Curved and followed the prompt:
-.. Terminal::
+.. ::
   Enter filename of students' data: students.txt
 
   Would you like to add another student (y/n)? n
