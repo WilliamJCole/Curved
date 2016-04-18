@@ -51,7 +51,7 @@ I will create a blank text file with a name of my choosing ie "student.txt".
 
 Then I start the Curved program, and follow the written instructions.
 
-.. ::
+.. :
   Enter filename of students' data: student.txt
   Would you like to add another student (y/n)? y
   Name:James Marcos
@@ -81,7 +81,7 @@ Then I start the Curved program, and follow the written instructions.
 
 Open up 'Grade.txt':
 
-.. ::
+.. :
   James Marcos,91.12,A-
 
 Scenario 02:
@@ -91,12 +91,12 @@ Curved.py
 
 File Named: Student.txt
 
-.. ::
+.. :
   James Marcos|90.0,85.0,95.0,93.0,94.0|90.0,92.0,95.0,93.0,94.0|90.0
 
 Open Curved, and followed prompt:
 
-.. ::
+.. :
   Enter filename of students' data: student.txt
 
   Would you like to add another student (y/n)? n
@@ -109,7 +109,7 @@ Open Curved, and followed prompt:
 
 File Names: Grade.txt:
 
-.. ::
+.. :
   James Marcos,91.12,A-
 
 Scenario 03:
@@ -119,7 +119,7 @@ grade values.
 
 File Named: Students.txt
 
-.. ::
+.. :
   John Doe|85.0,92.0,88.0,92.0,95.0,94.0,91.0,90.0,93.0,92.0|86.0,89.0,89.0,85.0,84.0,91.0,93.0|
   89.0,86.0,85.0,87.0
   Emily Rose|80.0,90.0,84.0,82.0,84.0,89.0,87.0,86.0,87.0,85.0|82.0,89.0,86.0,80.0,85.0,80.0,82.0|
@@ -143,7 +143,7 @@ File Named: Students.txt
 
 Open Curved and followed the prompt:
 
-.. ::
+.. :
   Enter filename of students' data: students.txt
 
   Would you like to add another student (y/n)? n
@@ -156,7 +156,7 @@ Open Curved and followed the prompt:
 
 File Named: grades.txt
 
-.. ::
+.. :
   John Doe,88.06,B+
   Emily Rose,86.48,B
   Erica Moss,80.13,B-
@@ -177,7 +177,7 @@ File Name Students.txt
 
 Open Curved and followed the prompt:
 
-.. ::
+.. :
   Enter filename of students' data: students.txt
 
   Would you like to add another student (y/n)? n
@@ -190,7 +190,7 @@ Open Curved and followed the prompt:
 
 File Named Grades.txt:
 
-.. ::
+.. :
   John Doe,93.34,A
   Emily Rose,91.76,A-
   Erica Moss,85.41,B
