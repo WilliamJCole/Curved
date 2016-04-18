@@ -50,23 +50,23 @@ to create a new Student and add a couple homework assignments, quizes and exams.
 I will create a blank text file with a name of my choosing ie "student.txt".
 
 Then I start the Curved program, and follow the written instructions.
-.. ::
-  Enter filename of students' data: student.txt
-  Would you like to add another student (y/n)? y
-  Name:James Marcos
-  Number of assignment grades the student has: 5
-  Assignment 2: 85
-  Assignment 3: 95
-  Assignment 4: 93
-  Assignment 5: 94
-  Number of quiz grades the student has: 5
-  Quiz 1: 90
-  Quiz 2: 92
-  Quiz 3: 95
-  Quiz 4: 93
-  Quiz 5: 94
-  Number of exam grades the student has: 1
-  Exam 1: 90
+
+ | Enter filename of students' data: student.txt
+ | Would you like to add another student (y/n)? y
+ | Name:James Marcos
+ | Number of assignment grades the student has: 5
+ | Assignment 2: 85
+ | Assignment 3: 95
+ | Assignment 4: 93
+ | Assignment 5: 94
+ | Number of quiz grades the student has: 5
+ | Quiz 1: 90
+ | Quiz 2: 92
+ | Quiz 3: 95
+ | Quiz 4: 93
+ | Quiz 5: 94
+ | Number of exam grades the student has: 1
+ | Exam 1: 90
 
   New student added!
 
