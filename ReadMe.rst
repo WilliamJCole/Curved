@@ -1,9 +1,9 @@
 #######################################################
 Curved (Grading and Curving for Students and Educators)
 #######################################################
-
+===============
 By William Cole
-*****************
+===============
 
 
 
@@ -49,8 +49,8 @@ not want to curve the grade.
 
 5. Acceptance Stories
 =====================
-
 Scenario 01:
+~~~~~~~~~~~~
 **Single Student Manually Enters Grades:**
 I'm just starting my term, so I don't have many grades to enter so I only need
 to create a new Student and add a couple homework assignments, quizzes and exams.
@@ -88,8 +88,8 @@ Then I start the Curved program, and follow the written instructions.
 Open up 'Grade.txt':
 .. ::
   James Marcos,91.12,A-
-
 Scenario 02:
+~~~~~~~~~~~~~
 **One Student Creates a Grades File Premade and enters it into Curved:**
 I created a document with all of the information stored in it to be loaded into
 Curved.py
@@ -113,8 +113,8 @@ Open Curved, and followed prompt:
 File Names: Grade.txt:
 .. ::
   James Marcos,91.12,A-
-
 Scenario 03:
+~~~~~~~~~~~~
 **A teacher wants to give his students letter grades:**
 I created a file with all of my students grades and calculate their letter
 grade values.
@@ -166,8 +166,8 @@ File Named: grades.txt
   Annalise Sy,94.72,A
   Andrew Thomas,64.62,D
   Bob Davidler,57.62,F
-
 Scenario 04:
+~~~~~~~~~~~~
 **A teacher wants to give his students letter grades with a curve:**
 A teacher wants to give a letter grade for all the work his students have
 completed, and then curve the grades.
