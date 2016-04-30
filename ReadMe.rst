@@ -17,12 +17,17 @@ their own grades.
 2. Persona
 =============
 
-1. **Name**: William Cole
+1. **Name**: James Marcos
 2. **Details**: As a student this tool will help me to see where I stand in any
    course, buy just entering my grades and their weights. I can see which
    classes require more work. I can then see how my GPA will be when I go
    further in SPS
-3. **Goals**: To simply see my grade and automatically.
+3. **Goals**: To simply see my grade automatically.
+
+1. **Name**: Sarah Jones
+2. **Details**: As a teacher this tool will help me calculate all of my students
+   grades and, if I choose to, curve the students grades
+3. **Goals**: To calculate my students grades and automatically curve the grades.
 
 3. Problem Scenario
 ======================
