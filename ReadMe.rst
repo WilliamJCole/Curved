@@ -19,7 +19,7 @@ their own grades.
 
 1. **Name**: William Cole
 2. **Details**: As a student this tool will help me to see where I stand in any
-   course, buy just entering my grades and there weights. I can see which
+   course, buy just entering my grades and their weights. I can see which
    classes require more work. I can then see how my GPA will be when I go
    further in SPS
 3. **Goals**: To simply see my grade and automatically.
@@ -213,12 +213,12 @@ When you are planning on importing a list of students, or just one Student by us
 
 The "|" separators denote the transitions in grading weight.
 .. ::
-    Student|Homework|Quizes|Tests
+    Student|Homework|Quizzes|Tests
 
 **Default Weight System:**
 
 Assignments = 20%
-Quizes      = 30%
+Quizzes      = 30%
 Exams       = 50%
 
 .. Note::
