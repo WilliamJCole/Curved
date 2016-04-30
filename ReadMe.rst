@@ -5,6 +5,8 @@ Curved (Grading and Curving for Students and Educators)
 By William Cole
 *****************
 
+
+
 1. Overview
 ============
 Curve is a program that takes lists of grades, gives them weights and then
