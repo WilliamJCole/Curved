@@ -165,9 +165,9 @@ def input_number(message, min_i=None, max_i=None, num_type=int):
             # Validate if the input is within the range
             min_check = True
             max_check = True
-            if min_i != None and input_num < min_i:
+            if min_i is not None and input_num < min_i:
                 min_check = False
-            if max_i != None and input_num > max_i:
+            if max_i is not None and input_num > max_i:
                 max_check = False
             valid_input = min_check and max_check
         except ValueError:
