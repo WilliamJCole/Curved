@@ -74,15 +74,15 @@ Then I start the Curved program, and follow the written instructions.
   Quiz 5: 94
   Number of exam grades the student has: 1
   Exam 1: 90
-
+ 
   New student added!
-
+ 
   Would you like to add another student (y/n)? n
 
   Enter filename of output file for students' final grades: Grade.txt
-
+ 
   Would you like to curve the student's final grades (y/n)? n
-
+ 
   Final grades successfully written to 'Grade.txt'.
 
 Open up 'Grade.txt':
