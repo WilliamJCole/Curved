@@ -1,9 +1,11 @@
 #######################################################
 Curved (Grading and Curving for Students and Educators)
 #######################################################
-
+===============
 By William Cole
-*****************
+===============
+
+
 
 1. Overview
 ============
@@ -15,12 +17,17 @@ their own grades.
 2. Persona
 =============
 
-1. **Name**: William Cole
+1. **Name**: James Marcos
 2. **Details**: As a student this tool will help me to see where I stand in any
-   course, buy just entering my grades and there weights. I can see which
+   course, buy just entering my grades and their weights. I can see which
    classes require more work. I can then see how my GPA will be when I go
    further in SPS
-3. **Goals**: To simply see my grade and automatically.
+3. **Goals**: To simply see my grade automatically.
+
+1. **Name**: Sarah Jones
+2. **Details**: As a teacher this tool will help me calculate all of my students
+   grades and, if I choose to, curve the students grades
+3. **Goals**: To calculate my students grades and automatically curve the grades.
 
 3. Problem Scenario
 ======================
@@ -28,7 +35,7 @@ their own grades.
 While Excel can be used to calculate a students grades, I would like a simpler
 and more automatic course to get my grades.
 
-1. **Current Alternatives**:Excel and Blackboard both can complete these tasks.
+1. **Current Alternatives**: Excel and Blackboard both can complete these tasks.
 2. **Value Proposition**: This program can also be utilized to calculate
    further grades, and it would be an automatic process.
 
@@ -42,18 +49,18 @@ not want to curve the grade.
 
 5. Acceptance Stories
 =====================
-
 Scenario 01:
+~~~~~~~~~~~~
 **Single Student Manually Enters Grades:**
-I'm just starting my term, so I dont have many grades to enter so I only need
-to create a new Student and add a couple homework assignments, quizes and exams.
-I will create a blank text file with a name of my choosing ie "student.txt".
+I'm just starting my term, so I don't have many grades to enter so I only need
+to create a new Student and add a couple homework assignments, quizzes and exams.
+I will create a blank text file with a name of my choosing i.e. "student.txt".
 
 Then I start the Curved program, and follow the written instructions.
 .. ::
   Enter filename of students' data: student.txt
   Would you like to add another student (y/n)? y
-  Name:James Marcos
+  Name: James Marcos
   Number of assignment grades the student has: 5
   Assignment 2: 85
   Assignment 3: 95
@@ -79,11 +86,10 @@ Then I start the Curved program, and follow the written instructions.
   Final grades successfully written to 'Grade.txt'.
 
 Open up 'Grade.txt':
-
 .. ::
   James Marcos,91.12,A-
-
 Scenario 02:
+~~~~~~~~~~~~~
 **One Student Creates a Grades File Premade and enters it into Curved:**
 I created a document with all of the information stored in it to be loaded into
 Curved.py
@@ -107,8 +113,8 @@ Open Curved, and followed prompt:
 File Names: Grade.txt:
 .. ::
   James Marcos,91.12,A-
-
 Scenario 03:
+~~~~~~~~~~~~
 **A teacher wants to give his students letter grades:**
 I created a file with all of my students grades and calculate their letter
 grade values.
@@ -160,8 +166,8 @@ File Named: grades.txt
   Annalise Sy,94.72,A
   Andrew Thomas,64.62,D
   Bob Davidler,57.62,F
-
 Scenario 04:
+~~~~~~~~~~~~
 **A teacher wants to give his students letter grades with a curve:**
 A teacher wants to give a letter grade for all the work his students have
 completed, and then curve the grades.
@@ -200,25 +206,25 @@ INSTRUCTIONS
 1. Installation
 ================
 
-The Curved Program is all incompasing. No extra modules are required for execution.
+The Curved Program is all encompassing. No extra modules are required for execution.
 
 2. Executing Curved.py
 =======================
 **Formatting input file:**
-
+If you plan on entering the information manually, create a blank txt file. Then follow the instructions in the command prompt.
 When you are planning on importing a list of students, or just one Student by using the following format:
-::
+.. ::
     John Doe|85.0,92.0,88.0,92.0,95.0,94.0,91.0,90.0,93.0,92.0|86.0,89.0,89.0,85.0,84.0,91.0,93.0|89.0,86.0,85.0
 
-The "|" seperators denote the transitions in grading weight.
-::
-    Student|Homework|Quizes|Tests
+The "|" separators denote the transitions in grading weight.
+.. ::
+    Student|Homework|Quizzes|Tests
 
 **Default Weight System:**
 
 Assignments = 20%
-Quizes      = 30%
+Quizzes      = 30%
 Exams       = 50%
 
-.. :
+.. Note::
     It's simple to change the default weights as they are on the top of the Curved.py Program.
